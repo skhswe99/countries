@@ -9,14 +9,15 @@ const Country = ({country}) => {
         if (country) {
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${country.latlng[0]}&lon=${country.latlng[1]}&appid=${apiKey}`)
                     .then(res => {
-                        console.log('res data in axios call = ', res.data)
                         setWeather(res.data)
-                        setIcon(`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`)
-                        console.log('icon = ', `${weather.weather[0].icon}`)
+                        return res.data
                     })
-                    // .catch(err => {
-                    //     console.log('err = ', err)
-                    // })
+                    .then(data => {
+                        setIcon(`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+                    })
+                    .catch(err => {
+                        console.log('err = ', err)
+                    })
         }
     }, [])
 
@@ -29,13 +30,12 @@ const Country = ({country}) => {
                 {country.area}
                 <h3>languages:</h3>
                 <ul>
-                    {/* {countries[0].languages.map(language => <li key={language}>{language}</li>     )} */}
                     {Object.keys(country.languages).map(langkey => <li key={langkey}>{country.languages[langkey]}</li>)}
                 </ul>
                 <img src={country.flags.png} /><br />
                 Weather in {country.capital}<br />
                 {weather ?  `temperature ${(weather.main.temp - 273.15).toFixed(2)} Celcius` : null}<br />
-                {/* {`<img src=${icon}/>`} */}
+                <img src={`${icon}`} />
             </div>
         )
     }

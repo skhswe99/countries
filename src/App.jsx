@@ -19,9 +19,6 @@ function App() {
     setFilter(event.target.value)
     setResult(allCountries.filter(country => country.name.common.toLowerCase().indexOf(event.target.value.toLowerCase()) >= 0))
   }
-  // console.log('filter = ', filter)
-  // console.log('countries = ', allCountries)
-  // console.log('result = ', results)
 
   return (
     <div>
