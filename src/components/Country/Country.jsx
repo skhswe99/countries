@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import './Country.css'
 
 const Country = ({country}) => {
     const [weather, setWeather] = useState(null)
@@ -32,10 +33,10 @@ const Country = ({country}) => {
                 <ul>
                     {Object.keys(country.languages).map(langkey => <li key={langkey}>{country.languages[langkey]}</li>)}
                 </ul>
-                <img src={country.flags.png} /><br />
+                <img src={country.flags.png} className="flag"/><br />
                 <h3>Weather in {country.capital}</h3>
                 {weather ?  `temperature ${(weather.main.temp - 273.15).toFixed(2)} Celcius` : null}<br />
-                <img src={`${icon}`} />
+                <img src={`${icon}`} className="weather-icon"/>
             </div>
         )
     }

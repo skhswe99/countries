@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import CountryList from './components/CountryList/CountryList'
+import './App.css'
 
 function App() {
   const [allCountries, setAllCountries] = useState([])
@@ -21,7 +22,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='app'>
       find countries <input value={filter} onChange={handleFilter} />
       <CountryList countries={results} />
     </div>
