@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className='app'>
-      find countries <input value={filter} onChange={handleFilter} />
+      <h1>find countries <input value={filter} onChange={handleFilter} /></h1>
       <CountryList countries={results} />
     </div>
   )

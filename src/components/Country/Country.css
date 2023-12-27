@@ -3,7 +3,7 @@
 }
 
 .weather-icon {
-    border: 2px solid blue;
+    border: 1px solid blue;
     border-radius: 10px;
     margin: 0.5rem;
 }
