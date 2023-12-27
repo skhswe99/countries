@@ -21,7 +21,7 @@ function App() {
   }
   // console.log('filter = ', filter)
   // console.log('countries = ', allCountries)
-  console.log('result = ', results)
+  // console.log('result = ', results)
 
   return (
     <div>

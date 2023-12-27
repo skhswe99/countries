@@ -29,7 +29,7 @@ const CountryList = ({countries}) => {
     }
 
     if (countries.length == 1) {
-        console.log('langauges.keys =', Object.keys(countries[0].languages))
+        // console.log('langauges.keys =', Object.keys(countries[0].languages))
         return(
             <Country country={countries[0]} />
         )
