@@ -5,7 +5,6 @@ import { useState } from 'react'
 const CountryList = ({countries}) => {
     const [selectedCountry, setSelectedCountry] = useState(null)
     const showView = (country) => {
-        console.log('show button clicked for country name = ', country.name.common)
         setSelectedCountry(country)
     }
 

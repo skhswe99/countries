@@ -26,14 +26,14 @@ const Country = ({country}) => {
         return(
             <div>
                 <h2>{country.name.common}</h2>
-                {country.capital}<br />
-                {country.area}
+                capital {country.capital}<br />
+                area {country.area}
                 <h3>languages:</h3>
                 <ul>
                     {Object.keys(country.languages).map(langkey => <li key={langkey}>{country.languages[langkey]}</li>)}
                 </ul>
                 <img src={country.flags.png} /><br />
-                Weather in {country.capital}<br />
+                <h3>Weather in {country.capital}</h3>
                 {weather ?  `temperature ${(weather.main.temp - 273.15).toFixed(2)} Celcius` : null}<br />
                 <img src={`${icon}`} />
             </div>
